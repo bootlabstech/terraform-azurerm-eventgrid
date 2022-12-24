@@ -14,7 +14,7 @@ variable "resource_group_name" {
 
 }
 variable "input_schema" {
-  default = "Specifies the schema in which incoming events will be published to this domain. Allowed values are CloudEventSchemaV1_0, CustomEventSchema, or EventGridSchema. Defaults to EventGridSchema. Changing this forces a new resource to be created."
+  desdescription  = "Specifies the schema in which incoming events will be published to this domain. Allowed values are CloudEventSchemaV1_0, CustomEventSchema, or EventGridSchema. Defaults to EventGridSchema. Changing this forces a new resource to be created."
   type    = string
 }
 variable "public_network_access_enabled" {
