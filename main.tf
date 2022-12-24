@@ -5,14 +5,14 @@ resource "azurerm_eventgrid_topic" "eventgrid" {
   input_schema                  = var.input_schema
   public_network_access_enabled = false
   local_auth_enabled            = true
-  # dynamic "
-  input_mapping_default_values {
-    # for_each = var.input_mapping_default_values ? [{}] : []
-    # content {
+
+  dynamic "input_mapping_default_values" {
+    for_each = var.input_mapping_default_values ? [{}] : []
+    content {    
     event_type   = var.event_type
     data_version = var.data_version
     subject      = var.subject
-    # }
+    }
   }
 
   dynamic "identity" {
@@ -21,17 +21,6 @@ resource "azurerm_eventgrid_topic" "eventgrid" {
       type = var.type
     }
   }
-
-  # dynamic "input_mapping_fields" {
-  #   for_each = var.input_mapping_fields ? [{}] : []
-  #   content {
-  #     id = 
-  #     topic =
-  #     event_type =
-  #     event_time =
-  #     data_version =
-  #     subject = 
-  #   }}
 
   dynamic "inbound_ip_rule" {
     for_each = var.inbound_ip_rule ? [{}] : []

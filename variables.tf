@@ -75,7 +75,7 @@ variable "type" {
 variable "input_mapping_default_values" {
   description = "region of deployment"
   type        = bool
-  default     = true
+  default     = false
 
 }
 variable "event_type" {
