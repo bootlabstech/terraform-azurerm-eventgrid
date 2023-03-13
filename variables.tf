@@ -20,10 +20,12 @@ variable "input_schema" {
 variable "public_network_access_enabled" {
   description = "Whether or not public network access is allowed for this event grid."
   type        = bool
+  default = true
 }
 variable "local_auth_enabled" {
   description = "Whether local auth is enabled or not"
   type        = bool
+  default = true
 
 }
 variable "identity" {
@@ -35,6 +37,7 @@ variable "identity" {
 variable "type" {
   description = "Specifies the type of Managed Service Identity that should be configured on this Redis Cluster. Possible values are SystemAssigned, UserAssigned, SystemAssigned, UserAssigned"
   type        = string
+  default = "SystemAssigned"
 }
 # variable "input_mapping_fields" {
 #     description = "region of deployment"
@@ -78,21 +81,23 @@ variable "input_mapping_default_values" {
   default     = false
 
 }
-variable "event_type" {
-  description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
-  type        = string
+# variable "event_type" {
+#   description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
+#   type        = string
+#   default = ""
 
-}
-variable "data_version" {
-  description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
-  type        = string
+# }
+# variable "data_version" {
+#   description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
+#   type        = string
+#   default = ""
 
-}
-variable "subject" {
-  description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
-  type        = string
+# }
+# variable "subject" {
+#   description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
+#   type        = string
 
-}
+# }
 variable "inbound_ip_rule" {
   description = "region of deployment"
   type        = bool
@@ -101,9 +106,11 @@ variable "inbound_ip_rule" {
 variable "ip_mask" {
   description = " the Weekday name - possible values include"
   type        = string
+  default = ""
 }
-variable "action" {
-  description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
-  type        = string
+# variable "action" {
+#   description = "The SKU of Redis to use. Possible values are Basic, Standard and Premium."
+#   type        = string
+#   default = "value"
 
-}
+# }
