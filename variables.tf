@@ -16,11 +16,12 @@ variable "resource_group_name" {
 variable "input_schema" {
   description  = "Specifies the schema in which incoming events will be published to this domain. Allowed values are CloudEventSchemaV1_0, CustomEventSchema, or EventGridSchema. Defaults to EventGridSchema. Changing this forces a new resource to be created."
   type    = string
+  default = "EventGridSchema"
 }
 variable "public_network_access_enabled" {
   description = "Whether or not public network access is allowed for this event grid."
   type        = bool
-  default = true
+  default = false
 }
 variable "local_auth_enabled" {
   description = "Whether local auth is enabled or not"
