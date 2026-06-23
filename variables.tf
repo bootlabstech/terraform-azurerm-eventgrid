@@ -19,3 +19,8 @@ variable "topic_type" {
   
 }
 
+variable "source_resource_id" {
+  description  = "Specifies the schema in which incoming events will be published to this domain. Allowed values are CloudEventSchemaV1_0, CustomEventSchema, or EventGridSchema. Defaults to EventGridSchema. Changing this forces a new resource to be created."
+  type    = string
+  
+}
